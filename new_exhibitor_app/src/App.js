@@ -212,7 +212,7 @@ function App() {
           <div className="space-y-4">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               {[1, 2, 3, 4, 5, 6].map((booth) => (
-                <div key={booth} className="bg-white/10 backdrop-blur-lg rounded-2xl p-4 border border-white/20">
+                <div key={booth} className="bg-white/10 backdrop-blur-lg rounded-2xl p-2 border border-white/20">
                   <div className="aspect-video bg-gradient-to-br from-gray-600 to-gray-800 rounded-lg mb-3 flex items-center justify-center">
                     <span className="text-4xl">🏪</span>
                   </div>
