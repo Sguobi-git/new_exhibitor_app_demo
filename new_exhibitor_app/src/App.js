@@ -501,11 +501,6 @@ function App() {
               </div>
             </div>
             <div className="flex items-center space-x-4">
-              // <div className="text-right">
-              //   <p className="text-white font-medium">{executive?.name}</p>
-              //   <p className="text-gray-300 text-sm">{executive?.title}</p>
-              // </div>
-              // <div className="text-4xl">{executive?.avatar}</div>
             </div>
           </div>
         </div>
