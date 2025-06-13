@@ -325,7 +325,7 @@ function App() {
         </div>
 
         <div className="relative w-full max-w-md">
-          <div className="bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20 shadow-2xl">
+          <div className="bg-white/10 backdrop-blur-lg rounded-3xl p-6 border border-white/20 shadow-2xl">
             <div className="text-center mb-8">
               <div className="w-20 h-20 bg-gradient-to-r from-purple-600 to-pink-600 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
                 <User className="w-10 h-10 text-white" />
