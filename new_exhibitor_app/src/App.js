@@ -335,7 +335,7 @@ function App() {
             </div>
 
             <div className="space-y-3 mb-8">
-              <label className="block text-sm font-medium text-gray-200 mb-3">
+              <label className="block text-sm font-medium text-gray-200 mb-3 text-center">
                 Select Executive Profile
               </label>
               {executives.map((executive) => (
