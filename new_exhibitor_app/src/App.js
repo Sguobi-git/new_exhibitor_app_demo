@@ -52,31 +52,24 @@ function App() {
     },
     'out-for-delivery': { 
       label: 'Out for Delivery', 
-      progress: 80, 
+      progress: 75, 
       color: 'from-blue-500 to-cyan-500',
       icon: Truck,
       bgColor: 'bg-blue-500/20 text-blue-400'
     },
     'in-route': { 
       label: 'In Route from Warehouse', 
-      progress: 60, 
+      progress: 50, 
       color: 'from-yellow-500 to-orange-500',
       icon: MapPin,
       bgColor: 'bg-yellow-500/20 text-yellow-400'
     },
     'in-process': { 
       label: 'In Process', 
-      progress: 40, 
+      progress: 25, 
       color: 'from-purple-500 to-pink-500',
       icon: Clock,
       bgColor: 'bg-purple-500/20 text-purple-400'
-    },
-    'confirmed': { 
-      label: 'Order Confirmed', 
-      progress: 20, 
-      color: 'from-indigo-500 to-purple-500',
-      icon: Package,
-      bgColor: 'bg-indigo-500/20 text-indigo-400'
     },
     'cancelled': { 
       label: 'Cancelled', 
@@ -124,7 +117,7 @@ function App() {
         item: 'Audio-Visual Equipment',
         description: 'Professional sound system, microphones, and presentation equipment',
         value: 3200,
-        status: 'in-process',
+        status: 'confirmed',
         estimatedDelivery: 'Tomorrow, 9:00 AM',
         orderDate: 'June 14, 2025',
         priority: 'high'
