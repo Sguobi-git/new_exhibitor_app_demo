@@ -179,7 +179,6 @@ function App() {
           }
         `}</style>
         <div className="flex items-center space-x-2 text-sm">
-          <statusInfo.icon className="w-4 h-4 text-white" />
           <span className="text-gray-300">{statusInfo.label}</span>
         </div>
       </div>
@@ -330,7 +329,7 @@ function App() {
         </div>
 
         {/* Stats Overview */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
           <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-6 border border-white/20">
             <div className="flex items-center space-x-3 mb-4">
               <Package className="w-8 h-8 text-blue-400" />
@@ -351,13 +350,6 @@ function App() {
               <h3 className="text-lg font-semibold text-white">Pending</h3>
             </div>
             <div className="text-3xl font-bold text-yellow-400">{pendingOrders}</div>
-          </div>
-          <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-6 border border-white/20">
-            <div className="flex items-center space-x-3 mb-4">
-              <BarChart3 className="w-8 h-8 text-purple-400" />
-              <h3 className="text-lg font-semibold text-white">Total Value</h3>
-            </div>
-            <div className="text-3xl font-bold text-purple-400">${totalValue.toLocaleString()}</div>
           </div>
         </div>
 
@@ -392,9 +384,6 @@ function App() {
                     <StatusIcon className="w-6 h-6 text-white" />
                     <span className="text-white font-bold">{order.id}</span>
                   </div>
-                  <div className={`px-3 py-1 rounded-full text-xs font-medium border ${getPriorityColor(order.priority)}`}>
-                    {order.priority.toUpperCase()} PRIORITY
-                  </div>
                 </div>
 
                 {/* Order Info */}
@@ -402,15 +391,9 @@ function App() {
                 <p className="text-gray-300 text-sm mb-4">{order.description}</p>
 
                 {/* Order Details */}
-                <div className="grid grid-cols-2 gap-4 mb-6">
-                  <div>
-                    <p className="text-gray-400 text-sm">Order Value</p>
-                    <p className="text-white font-bold text-lg">${order.value.toLocaleString()}</p>
-                  </div>
-                  <div>
-                    <p className="text-gray-400 text-sm">Order Date</p>
-                    <p className="text-white font-medium">{order.orderDate}</p>
-                  </div>
+                <div className="mb-6">
+                  <p className="text-gray-400 text-sm">Order Date</p>
+                  <p className="text-white font-medium">{order.orderDate}</p>
                 </div>
 
                 {/* Progress Bar */}
@@ -419,15 +402,9 @@ function App() {
                 </div>
 
                 {/* Status Badge */}
-                <div className="flex items-center justify-between">
-                  <div className={`inline-flex items-center space-x-2 px-3 py-2 rounded-full ${statusInfo.bgColor}`}>
-                    <StatusIcon className="w-4 h-4" />
-                    <span className="text-sm font-medium">{statusInfo.label}</span>
-                  </div>
-                  <div className="text-right">
-                    <p className="text-gray-400 text-xs">Estimated Delivery</p>
-                    <p className="text-white font-medium text-sm">{order.estimatedDelivery}</p>
-                  </div>
+                <div className={`inline-flex items-center space-x-2 px-3 py-2 rounded-full ${statusInfo.bgColor}`}>
+                  <StatusIcon className="w-4 h-4" />
+                  <span className="text-sm font-medium">{statusInfo.label}</span>
                 </div>
               </div>
             );
