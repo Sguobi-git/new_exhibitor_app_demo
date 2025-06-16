@@ -86,51 +86,36 @@ function App() {
         id: 'ORD-2025-001',
         item: 'Premium Booth Setup Package',
         description: 'Complete booth installation with premium furniture, lighting, and tech setup',
-        value: 4250,
         status: 'out-for-delivery',
-        estimatedDelivery: 'Today, 2:30 PM',
-        orderDate: 'June 14, 2025',
-        priority: 'high'
+        orderDate: 'June 14, 2025'
       },
       {
         id: 'ORD-2025-002',
         item: 'Interactive Display System',
         description: '75" 4K touchscreen display with interactive software and mounting',
-        value: 2890,
         status: 'in-route',
-        estimatedDelivery: 'Today, 4:15 PM',
-        orderDate: 'June 13, 2025',
-        priority: 'medium'
+        orderDate: 'June 13, 2025'
       },
       {
         id: 'ORD-2025-003',
         item: 'Marketing Materials Bundle',
         description: 'Banners, brochures, business cards, and promotional items',
-        value: 1150,
         status: 'delivered',
-        estimatedDelivery: 'Delivered at 10:20 AM',
-        orderDate: 'June 12, 2025',
-        priority: 'low'
+        orderDate: 'June 12, 2025'
       },
       {
         id: 'ORD-2025-004',
         item: 'Audio-Visual Equipment',
         description: 'Professional sound system, microphones, and presentation equipment',
-        value: 3200,
         status: 'in-process',
-        estimatedDelivery: 'Tomorrow, 9:00 AM',
-        orderDate: 'June 14, 2025',
-        priority: 'high'
+        orderDate: 'June 14, 2025'
       },
       {
         id: 'ORD-2025-005',
         item: 'Networking Infrastructure',
         description: 'High-speed internet, WiFi setup, and network security installation',
-        value: 1800,
         status: 'in-process',
-        estimatedDelivery: 'Tomorrow, 11:30 AM',
-        orderDate: 'June 15, 2025',
-        priority: 'medium'
+        orderDate: 'June 15, 2025'
       }
     ];
     return baseOrders;
@@ -169,29 +154,8 @@ function App() {
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/60 to-transparent w-20 animate-sweep"></div>
           </div>
         </div>
-        <style jsx>{`
-          @keyframes sweep {
-            0% { transform: translateX(-100px); }
-            100% { transform: translateX(calc(100vw)); }
-          }
-          .animate-sweep {
-            animation: sweep 2s ease-in-out infinite;
-          }
-        `}</style>
-        <div className="flex items-center space-x-2 text-sm">
-          <span className="text-gray-300">{statusInfo.label}</span>
-        </div>
       </div>
     );
-  };
-
-  const getPriorityColor = (priority) => {
-    switch (priority) {
-      case 'high': return 'bg-red-500/20 text-red-400 border-red-500/30';
-      case 'medium': return 'bg-yellow-500/20 text-yellow-400 border-yellow-500/30';
-      case 'low': return 'bg-green-500/20 text-green-400 border-green-500/30';
-      default: return 'bg-gray-500/20 text-gray-400 border-gray-500/30';
-    }
   };
 
   // Login Screen
@@ -291,11 +255,19 @@ function App() {
   // Main Dashboard
   const exhibitor = exhibitors.find(e => e.id === selectedExhibitor);
   const deliveredOrders = orders.filter(o => o.status === 'delivered').length;
-  const totalValue = orders.reduce((sum, order) => sum + order.value, 0);
   const pendingOrders = orders.filter(o => o.status !== 'delivered' && o.status !== 'cancelled').length;
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-purple-900 to-violet-900 p-6">
+      <style jsx>{`
+        @keyframes sweep {
+          0% { transform: translateX(-100px); }
+          100% { transform: translateX(calc(100vw)); }
+        }
+        .animate-sweep {
+          animation: sweep 2s ease-in-out infinite;
+        }
+      `}</style>
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="bg-white/10 backdrop-blur-lg rounded-3xl p-6 border border-white/20 mb-8">
