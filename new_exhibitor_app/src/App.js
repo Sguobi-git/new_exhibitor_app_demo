@@ -117,7 +117,7 @@ function App() {
         item: 'Audio-Visual Equipment',
         description: 'Professional sound system, microphones, and presentation equipment',
         value: 3200,
-        status: 'confirmed',
+        status: 'in-process',
         estimatedDelivery: 'Tomorrow, 9:00 AM',
         orderDate: 'June 14, 2025',
         priority: 'high'
@@ -127,7 +127,7 @@ function App() {
         item: 'Networking Infrastructure',
         description: 'High-speed internet, WiFi setup, and network security installation',
         value: 1800,
-        status: 'confirmed',
+        status: 'in-process',
         estimatedDelivery: 'Tomorrow, 11:30 AM',
         orderDate: 'June 15, 2025',
         priority: 'medium'
