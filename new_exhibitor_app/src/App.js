@@ -86,6 +86,7 @@ function App() {
         id: 'ORD-2025-001',
         item: 'Premium Booth Setup Package',
         description: 'Complete booth installation with premium furniture, lighting, and tech setup',
+        value: 4250,
         status: 'out-for-delivery',
         orderDate: 'June 14, 2025'
       },
@@ -93,6 +94,7 @@ function App() {
         id: 'ORD-2025-002',
         item: 'Interactive Display System',
         description: '75" 4K touchscreen display with interactive software and mounting',
+        value: 2890,
         status: 'in-route',
         orderDate: 'June 13, 2025'
       },
@@ -100,6 +102,7 @@ function App() {
         id: 'ORD-2025-003',
         item: 'Marketing Materials Bundle',
         description: 'Banners, brochures, business cards, and promotional items',
+        value: 1150,
         status: 'delivered',
         orderDate: 'June 12, 2025'
       },
@@ -107,6 +110,7 @@ function App() {
         id: 'ORD-2025-004',
         item: 'Audio-Visual Equipment',
         description: 'Professional sound system, microphones, and presentation equipment',
+        value: 3200,
         status: 'in-process',
         orderDate: 'June 14, 2025'
       },
@@ -114,6 +118,7 @@ function App() {
         id: 'ORD-2025-005',
         item: 'Networking Infrastructure',
         description: 'High-speed internet, WiFi setup, and network security installation',
+        value: 1800,
         status: 'in-process',
         orderDate: 'June 15, 2025'
       }
@@ -154,6 +159,15 @@ function App() {
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/60 to-transparent w-20 animate-sweep"></div>
           </div>
         </div>
+        <style jsx>{`
+          @keyframes sweep {
+            0% { transform: translateX(-100px); }
+            100% { transform: translateX(calc(100vw)); }
+          }
+          .animate-sweep {
+            animation: sweep 2s ease-in-out infinite;
+          }
+        `}</style>
       </div>
     );
   };
@@ -247,6 +261,10 @@ function App() {
               </p>
             </div>
           </div>
+
+          {/* Floating elements */}
+          <div className="absolute -top-4 -right-4 w-8 h-8 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full blur-sm opacity-70 animate-bounce"></div>
+          <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full blur-sm opacity-70 animate-bounce delay-1000"></div>
         </div>
       </div>
     );
@@ -259,15 +277,6 @@ function App() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-purple-900 to-violet-900 p-6">
-      <style jsx>{`
-        @keyframes sweep {
-          0% { transform: translateX(-100px); }
-          100% { transform: translateX(calc(100vw)); }
-        }
-        .animate-sweep {
-          animation: sweep 2s ease-in-out infinite;
-        }
-      `}</style>
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="bg-white/10 backdrop-blur-lg rounded-3xl p-6 border border-white/20 mb-8">
